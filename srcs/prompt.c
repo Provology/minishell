@@ -86,7 +86,7 @@ char	*rl_gets(void)
 	free(prompt);
 	if (!line)
 	{
-		ft_putstr_fd("exit: \n", 1);
+		ft_putstr_fd("exit: \n", 2);
 		memfree(g_var.env);
 		clear_history();
 		exit(0);
