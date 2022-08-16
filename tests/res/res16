@@ -1,0 +1,52 @@
+Mini[USER@HOSTNAME minishell_test]$ "
+Error: Unclosed quotes
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+1
+Mini[USER@HOSTNAME minishell_test]$ '
+Error: Unclosed quotes
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+1
+Mini[USER@HOSTNAME minishell_test]$ ||
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+0
+Mini[USER@HOSTNAME minishell_test]$ echo >>>file
+Syntax error near unexpected token '>'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+62
+Mini[USER@HOSTNAME minishell_test]$ >
+Syntax error near unexpected token 'newline'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+2
+Mini[USER@HOSTNAME minishell_test]$ <
+Syntax error near unexpected token 'newline'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+2
+Mini[USER@HOSTNAME minishell_test]$ >>
+Syntax error near unexpected token 'newline'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+2
+Mini[USER@HOSTNAME minishell_test]$ <<
+Syntax error near unexpected token 'newline'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+2
+Mini[USER@HOSTNAME minishell_test]$ echo >> >>file
+Syntax error near unexpected token '>'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+62
+Mini[USER@HOSTNAME minishell_test]$ echo > >> file
+Syntax error near unexpected token '>'
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+62
+Mini[USER@HOSTNAME minishell_test]$ '''
+Error: Unclosed quotes
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+1
+Mini[USER@HOSTNAME minishell_test]$ echo > $____DUMMY
+Error, undefined redirection output
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+1
+Mini[USER@HOSTNAME minishell_test]$ echoechoecho $?
+minishell: echoechoecho : command not found
+Mini[USER@HOSTNAME minishell_test]$ echo $?
+127
+Mini[USER@HOSTNAME minishell_test]$ exit: 

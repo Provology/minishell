@@ -1,0 +1,4 @@
+Mini[USER@HOSTNAME minishell_test]$ echo "Hello world!" > tmp | cat tmp tmp >> t mp1 | grep ! < tmp1 | wc -l
+2
+Mini[USER@HOSTNAME minishell_test]$ rm -f tmp tmp1
+Mini[USER@HOSTNAME minishell_test]$ exit: 

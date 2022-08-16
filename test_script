@@ -1,0 +1,59 @@
+#!/bin/bash
+#			minishell_test.sh
+
+set -e
+mkdir -p minishell_test
+cd minishell_test
+for n in {0..16}; do
+	res=`../minishell < ../tests/test$n 2>&1 | sed 's/[^[:print:]]\[[^a-zA-Z]*[a-zA-Z]//g'`
+	a=`cat ../tests/res/res$n`
+	if [ x"$a" != x"$res" ]; then
+		echo TEST $n FAILED: expected "$a", got "$res"
+		echo COMMAND $(cat ../tests/test$n)
+	else
+		echo TEST $n PASSED
+	fi
+done
+cd ..
+rm -rf minishell_test
+
+
+
+
+
+
+
+
+
+# set -e
+# while read a b ; do
+# 	res=`echo $a | ./minishell`
+# 	if [ x"$b" != x"$res" ]; then
+# 		echo TEST $a FAILED: expected "$b", got "$res"
+# 	fi
+# done <<EOF
+# 	"echo "$ $eskeetit 7" | grep '"|kek"' | wc -l > " 'proctor&gamble'""
+# EOF
+
+# rm -f ' '\''proctor&gamble'\''' 
+
+# FILEDATA="test16"
+# FILERES="res16"
+# exec {FD1}<$FILEDATA     # open file for read, assign descriptor
+# exec {FD2}<$FILERES
+# echo "Opened $FILEDATA for read using descriptor $FD1"
+# while read -u $FD1 line && read -d 'END' -u $FD2 answer; do
+#     # res=`echo $line | ./minishell 2>&1`
+# 	echo $line | ./minishell 2>&1 | tee tmp
+# 	res=`cat tmp`
+# 	if [ x"$answer" != x"$res" ]; then
+# 		echo TEST $line FAILED: expected "$answer", got "$res"
+# 	else
+# 		echo TEST $line PASSED
+# 	fi
+#     # echo $line
+# done
+# exec {FD1}<&-    # close file
+# exec {FD2}<&-
+
+

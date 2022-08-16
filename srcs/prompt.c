@@ -6,11 +6,13 @@
 /*   By: vmervin <vmervin@student-21.school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 13:35:37 by vmervin           #+#    #+#             */
-/*   Updated: 2022/07/31 19:28:30 by vmervin          ###   ########.fr       */
+/*   Updated: 2022/08/16 16:04:19 by vmervin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+#ifdef TEST
 
 static char	*prompt_invitation(void)
 {
@@ -18,6 +20,25 @@ static char	*prompt_invitation(void)
 	char	*path;
 
 	path = getcwd(NULL, 0);
+	prompt = NULL;
+	prompt = ft_strjoin("Mini[", "USER");
+	prompt = ft_strjoin_free(prompt, ft_strdup("@"));
+	prompt = ft_strjoin_free(prompt, ft_strdup("HOSTNAME"));
+	prompt = ft_strjoin_free(prompt, ft_strdup(" "));
+	prompt = ft_strjoin_free(prompt, ft_strdup(ft_strrchr(path, '/') + 1));
+	prompt = ft_strjoin_free(prompt, ft_strdup("]$ "));
+	free(path);
+	return (prompt);
+}
+#else
+
+static char	*prompt_invitation(void)
+{
+	char	*prompt;
+	char	*path;
+
+	path = getcwd(NULL, 0);
+	prompt = NULL;
 	prompt = ft_strjoin("Mini[", getenv("USER"));
 	prompt = ft_strjoin_free(prompt, ft_strdup("@"));
 	prompt = ft_strjoin_free(prompt, ft_strdup(getenv("HOSTNAME")));
@@ -27,6 +48,7 @@ static char	*prompt_invitation(void)
 	free(path);
 	return (prompt);
 }
+#endif
 
 static void	recieve(int signum)
 {
@@ -64,7 +86,7 @@ char	*rl_gets(void)
 	free(prompt);
 	if (!line)
 	{
-		ft_putstr_fd("exit: \n", 2);
+		ft_putstr_fd("exit: \n", 1);
 		memfree(g_var.env);
 		clear_history();
 		exit(0);

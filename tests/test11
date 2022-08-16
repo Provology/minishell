@@ -1,0 +1,10 @@
+pwd
+echo $PWD $OLDPWD
+mkdir -p new_test1
+cd new_test1
+pwd
+echo $PWD $OLDPWD
+cd ..
+pwd
+echo $PWD $OLDPWD
+rm -rf new_test1

@@ -1,0 +1,3 @@
+Mini[USER@HOSTNAME minishell_test]$ "    dddd$r  "
+minishell:     dddd   : command not found
+Mini[USER@HOSTNAME minishell_test]$ exit: 

@@ -1,0 +1,1 @@
+echo "$ $eskeetit 7" | grep '"|kek"'

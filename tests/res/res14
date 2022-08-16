@@ -1,0 +1,7 @@
+Mini[USER@HOSTNAME minishell_test]$ ""
+Mini[USER@HOSTNAME minishell_test]$ "
+Error: Unclosed quotes
+Mini[USER@HOSTNAME minishell_test]$ ''
+Mini[USER@HOSTNAME minishell_test]$ '
+Error: Unclosed quotes
+Mini[USER@HOSTNAME minishell_test]$ exit: 

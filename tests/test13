@@ -1,0 +1,2 @@
+echo "Hello world!" > tmp | cat tmp tmp >> tmp1 | grep ! < tmp1 | wc -l
+rm -f tmp tmp1

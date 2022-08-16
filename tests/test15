@@ -1,0 +1,6 @@
+cat <<EOF > tmp | cat tmp | wc -l
+1
+2
+3
+EOF
+rm -f tmp

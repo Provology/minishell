@@ -1,0 +1,17 @@
+Mini[USER@HOSTNAME minishell_test]$ pwd
+/home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test
+Mini[USER@HOSTNAME minishell_test]$ echo $PWD $OLDPWD
+/home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test /home/rutkin/software_developer/libtest/monishell/vmervin_test1
+Mini[USER@HOSTNAME minishell_test]$ mkdir -p new_test1
+Mini[USER@HOSTNAME minishell_test]$ cd new_test1
+Mini[USER@HOSTNAME new_test1]$ pwd
+/home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test/new_test1
+Mini[USER@HOSTNAME new_test1]$ echo $PWD $OLDPWD
+/home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test/new_test1 /home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test
+Mini[USER@HOSTNAME new_test1]$ cd ..
+Mini[USER@HOSTNAME minishell_test]$ pwd
+/home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test
+Mini[USER@HOSTNAME minishell_test]$ echo $PWD $OLDPWD
+/home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test /home/rutkin/software_developer/libtest/monishell/vmervin_test1/minishell_test/new_test1
+Mini[USER@HOSTNAME minishell_test]$ rm -rf new_test1
+Mini[USER@HOSTNAME minishell_test]$ exit: 

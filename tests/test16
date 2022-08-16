@@ -1,0 +1,26 @@
+"
+echo $?
+'
+echo $?
+||
+echo $?
+echo >>>file
+echo $?
+>
+echo $?
+<
+echo $?
+>>
+echo $?
+<<
+echo $?
+echo >> >>file
+echo $?
+echo > >> file
+echo $?
+'''
+echo $?
+echo > $____DUMMY
+echo $?
+echoechoecho $?
+echo $?

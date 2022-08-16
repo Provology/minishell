@@ -1,0 +1,26 @@
+mkdir -p new_test
+cd new_test
+env > env
+env > env0
+diff -q env env0
+ls
+cat <<EOF
+1
+2
+3
+EOF
+echo Hello World!
+export QWERTY=12345
+env > env1
+diff -q env env1
+echo $QWERTY
+QWERTY=54321
+env > env2
+diff -q env1 env2
+echo $QWERTY
+unset QWERTY
+env > env3
+diff -q env env3
+ls
+cd ..
+rm -rf new_test

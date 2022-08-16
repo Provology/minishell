@@ -1,0 +1,4 @@
+Mini[USER@HOSTNAME minishell_test]$ cat <<EOF > tmp | cat tmp | wc -l
+3
+Mini[USER@HOSTNAME minishell_test]$ rm -f tmp
+Mini[USER@HOSTNAME minishell_test]$ exit: 
